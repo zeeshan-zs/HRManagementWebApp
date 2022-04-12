@@ -1,0 +1,312 @@
+﻿@model ZeeWebApp.Models.POEmployee
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MiddleName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MiddleName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Entity.EntityName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Entity.EntityName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Statustbl.StatusVal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Statustbl.StatusVal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaritalStatus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MaritalStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Country.Nationality)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Country.Nationality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfJoining)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DateOfJoining)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastWorkingDay)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastWorkingDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Designation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Designation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BloodGroup)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BloodGroup)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyTransport)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CompanyTransport)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Education)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Education)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VisaDesignation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VisaDesignation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PassportNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PassportNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PassportIssueDt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PassportIssueDt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PassportExpiryDt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PassportExpiryDt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PassportAtchmt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PassportAtchmt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VisaNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VisaNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VisaIssueDt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VisaIssueDt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VisaExpiryDt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VisaExpiryDt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VisaAtchmt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VisaAtchmt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UIDNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UIDNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmiratesIdNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmiratesIdNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmiratesIdIssueDt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmiratesIdIssueDt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmiratesIdExpiryDt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmiratesIdExpiryDt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmiratesIdAtchmt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmiratesIdAtchmt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HouseFlatVillaNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HouseFlatVillaNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StreetAreaName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StreetAreaName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NearestLandmark)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NearestLandmark)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResidingEmirateID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ResidingEmirateID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpMobNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmpMobNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmergencyContactName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmergencyContactName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmergencyContactNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmergencyContactNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmergencyContactNameHmCtry)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmergencyContactNameHmCtry)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmergencyContactNumberHmCtry)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmergencyContactNumberHmCtry)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddressHmCtry)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AddressHmCtry)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

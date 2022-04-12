@@ -1,0 +1,424 @@
+﻿@model ZeeWebApp.ViewModels.POEmployeeCreateViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm("Create", "POEmployees", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Employee</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="row">
+        <div class="col-12 col-md-2 mb-4">
+            <div class="form-floating">
+
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control", @placeholder = "Title" } })
+                @Html.LabelFor(model => model.Title)
+
+                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-12 col-md-4 mb-4">
+            <div class="form-floating">
+                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", @placeholder = "FirstName" } })
+                @Html.LabelFor(model => model.FirstName)
+
+                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-12 col-md-3 mb-4">
+            <div class="form-floating">
+                @Html.EditorFor(model => model.MiddleName, new { htmlAttributes = new { @class = "form-control", @placeholder = "MiddleName" } })
+                @Html.LabelFor(model => model.MiddleName)
+
+                @Html.ValidationMessageFor(model => model.MiddleName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-12 col-md-3 mb-4">
+            <div class="form-floating">
+                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control", @placeholder = "LastName" } })
+                @Html.LabelFor(model => model.LastName)
+
+                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <!-- NEW LINE-->
+
+    <div class="row">
+        <div class="col-12 col-md-2 mb-4">
+            <div class="form-floating">
+                @Html.DropDownListFor(model => model.EntityID, Model.EntityItems, "Select Entity", htmlAttributes: new { @class = "form-select" })
+                @Html.LabelFor(model => model.EntityID, "Entity")
+                @Html.ValidationMessageFor(model => model.EntityID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-12 col-md-2 mb-4">
+            <div class="form-floating">
+                @Html.DropDownListFor(model => model.StatusID, Model.StatusItems, "Select Status", htmlAttributes: new { @class = "form-select" })
+                @Html.LabelFor(model => model.StatusID, "Emp Status")
+                @Html.ValidationMessageFor(model => model.StatusID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-12 col-md-2 mb-4">
+            <div class="form-floating">
+                @Html.EditorFor(model => model.EmployeeID, new { htmlAttributes = new { @class = "form-control", @placeholder = "EmployeeID" } })
+                @Html.LabelFor(model => model.EmployeeID)
+                @Html.ValidationMessageFor(model => model.EmployeeID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-12 col-md-2 mb-4">
+            <div class="form-floating">
+                @Html.DropDownList("Gender", new List<SelectListItem>
+                {
+                new SelectListItem { Text = "Male", Value="Male" },
+                new SelectListItem { Text = "Female", Value="Female" }
+                }, "Select Gender", htmlAttributes: new { @class = "form-select" })
+                @Html.LabelFor(model => model.Gender)
+                @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-12 col-md-2 mb-4">
+            <div class="form-floating">
+                @Html.EditorFor(model => model.MaritalStatus, new { htmlAttributes = new { @class = "form-control", @placeholder = "EmployeeID" } })
+                @Html.LabelFor(model => model.MaritalStatus)
+                @Html.ValidationMessageFor(model => model.MaritalStatus, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-12 col-md-2 mb-4">
+            <div class="form-floating">
+                @Html.DropDownListFor(model => model.NationalityID, Model.NationalityItems, "Select Nationality", htmlAttributes: new { @class = "form-select" })
+                @Html.LabelFor(model => model.NationalityID, "Nationality")
+                @Html.ValidationMessageFor(model => model.NationalityID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+    </div>
+
+    <!-- NEW LINE-->
+
+    <div class="row">
+        <div class="col-12 col-md-6 mb-4">
+            <div class="form-floating">
+                @Html.TextBoxFor(model => model.DateOfJoining, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control" })
+                @Html.LabelFor(model => model.DateOfJoining)
+                @Html.ValidationMessageFor(model => model.DateOfJoining, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <div class="col-12 col-md-6 mb-4">
+            <div class="form-floating">
+                @Html.TextBoxFor(model => model.LastWorkingDay, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control" })
+                @Html.LabelFor(model => model.LastWorkingDay)
+                @Html.ValidationMessageFor(model => model.LastWorkingDay, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <!-- NEW LINE-->
+
+    <div class="row">
+        <div class="col-12 col-md-2 mb-4">
+            <div class="form-floating">
+                @Html.EditorFor(model => model.Designation, new { htmlAttributes = new { @class = "form-control", @placeholder = "Designation" } })
+                @Html.LabelFor(model => model.Designation)
+                @Html.ValidationMessageFor(model => model.Designation, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-12 col-md-2 mb-4">
+            <div class="form-floating">
+                @Html.EditorFor(model => model.VisaDesignation, new { htmlAttributes = new { @class = "form-control", @placeholder = "VisaDesignation" } })
+                @Html.LabelFor(model => model.VisaDesignation)
+                @Html.ValidationMessageFor(model => model.VisaDesignation, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-12 col-md-2 mb-4">
+            <div class="form-floating">
+                @Html.DropDownList("BloodGroup", new List<SelectListItem>
+                {
+                new SelectListItem { Text = "A", Value="A" },
+                new SelectListItem { Text = "B", Value="B" },
+                new SelectListItem { Text = "AB", Value="AB" },
+                new SelectListItem { Text = "O", Value="O" }
+                }, "Select Blood Group", htmlAttributes: new { @class = "form-select" })
+                @Html.LabelFor(model => model.BloodGroup)
+                @Html.ValidationMessageFor(model => model.BloodGroup, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-12 col-md-3 mb-4">
+            <div class="form-floating">
+                @Html.DropDownList("CompanyTransport", new List<SelectListItem>
+                {
+                new SelectListItem { Text = "Yes", Value="Yes" },
+                new SelectListItem { Text = "No", Value="No" }
+                }, "Select One", htmlAttributes: new { @class = "form-select" })
+                @Html.LabelFor(model => model.CompanyTransport)
+                @Html.ValidationMessageFor(model => model.CompanyTransport, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-12 col-md-3 mb-4">
+            <div class="form-floating">
+                @Html.EditorFor(model => model.Education, new { htmlAttributes = new { @class = "form-control", @placeholder = "Education" } })
+                @Html.LabelFor(model => model.Education)
+                @Html.ValidationMessageFor(model => model.Education, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div><h4>Passport Details</h4></div>
+
+    <div class="row">
+        <div class="col-12 col-md-3 mb-4">
+            <div class="form-floating">
+                @Html.EditorFor(model => model.PassportNo, new { htmlAttributes = new { @class = "form-control", @placeholder = "PassportNo" } })
+                @Html.LabelFor(model => model.PassportNo)
+                @Html.ValidationMessageFor(model => model.PassportNo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-12 col-md-3 mb-4">
+            <div class="form-floating">
+                @Html.TextBoxFor(model => model.PassportIssueDt, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control" })
+                @Html.LabelFor(model => model.PassportIssueDt)
+                @Html.ValidationMessageFor(model => model.PassportIssueDt, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-12 col-md-3 mb-4">
+            <div class="form-floating">
+                @Html.TextBoxFor(model => model.PassportExpiryDt, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control" })
+                @Html.LabelFor(model => model.PassportExpiryDt)
+                @Html.ValidationMessageFor(model => model.PassportExpiryDt, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        @*File attachment Textbox*@
+        <div class="col-12 col-md-3 mb-4">
+            <div class="form-floating">
+                @Html.TextBoxFor(model => model.PassportAtchmtObj, new { type = "file", @class = "form-control" })
+                @Html.LabelFor(model => model.PassportAtchmtObj)
+                @Html.ValidationMessageFor(model => model.PassportAtchmtObj, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div><h4>Visa Details</h4></div>
+
+    <div class="row">
+        <div class="col-12 col-md-3 mb-4">
+            <div class="form-floating">
+                @Html.EditorFor(model => model.VisaNo, new { htmlAttributes = new { @class = "form-control", @placeholder = "PassportNo" } })
+                @Html.LabelFor(model => model.VisaNo)
+                @Html.ValidationMessageFor(model => model.VisaNo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-12 col-md-3 mb-4">
+            <div class="form-floating">
+                @Html.TextBoxFor(model => model.VisaIssueDt, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control" })
+                @Html.LabelFor(model => model.VisaIssueDt)
+                @Html.ValidationMessageFor(model => model.VisaIssueDt, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-12 col-md-3 mb-4">
+            <div class="form-floating">
+                @Html.TextBoxFor(model => model.VisaExpiryDt, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control" })
+                @Html.LabelFor(model => model.VisaExpiryDt)
+                @Html.ValidationMessageFor(model => model.VisaExpiryDt, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        @*File attachment Textbox*@
+        <div class="col-12 col-md-3 mb-4">
+            <div class="form-floating">
+                @Html.TextBoxFor(model => model.VisaAtchmtObj, new { type = "file", @class = "form-control" })
+                @Html.LabelFor(model => model.VisaAtchmtObj)
+                @Html.ValidationMessageFor(model => model.VisaAtchmtObj, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div><h4>Emirates ID Details</h4></div>
+
+    <div class="row">
+        <div class="col-12 mb-4">
+            <div class="form-floating">
+                @Html.EditorFor(model => model.UIDNo, new { htmlAttributes = new { @class = "form-control", @placeholder = "UIDNo" } })
+                @Html.LabelFor(model => model.UIDNo)
+                @Html.ValidationMessageFor(model => model.UIDNo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-12 col-md-3 mb-4">
+            <div class="form-floating">
+                @Html.EditorFor(model => model.EmiratesIdNo, new { htmlAttributes = new { @class = "form-control", @placeholder = "EmiratesIdNo" } })
+                @Html.LabelFor(model => model.EmiratesIdNo)
+                @Html.ValidationMessageFor(model => model.EmiratesIdNo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-12 col-md-3 mb-4">
+            <div class="form-floating">
+                @Html.TextBoxFor(model => model.EmiratesIdIssueDt, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control" })
+                @Html.LabelFor(model => model.EmiratesIdIssueDt)
+                @Html.ValidationMessageFor(model => model.EmiratesIdIssueDt, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-12 col-md-3 mb-4">
+            <div class="form-floating">
+                @Html.TextBoxFor(model => model.EmiratesIdExpiryDt, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control" })
+                @Html.LabelFor(model => model.EmiratesIdExpiryDt)
+                @Html.ValidationMessageFor(model => model.EmiratesIdExpiryDt, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        @*File attachment Textbox*@
+        <div class="col-12 col-md-3 mb-4">
+            <div class="form-floating">
+                @Html.TextBoxFor(model => model.EmrtsIdAtchmtObj, new { type = "file", @class = "form-control" })
+                @Html.LabelFor(model => model.EmrtsIdAtchmtObj)
+                @Html.ValidationMessageFor(model => model.EmrtsIdAtchmtObj, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div><h4>Contact Details</h4></div>
+
+    <div class="row">
+        <div class="col-12 col-md-4 mb-4">
+            <div class="form-floating">
+                @Html.EditorFor(model => model.HouseFlatVillaNo, new { htmlAttributes = new { @class = "form-control", @placeholder = "HouseFlatVillaNo" } })
+                @Html.LabelFor(model => model.HouseFlatVillaNo)
+                @Html.ValidationMessageFor(model => model.HouseFlatVillaNo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 mb-4">
+            <div class="form-floating">
+                @Html.EditorFor(model => model.StreetAreaName, new { htmlAttributes = new { @class = "form-control", @placeholder = "StreetAreaName" } })
+                @Html.LabelFor(model => model.StreetAreaName)
+                @Html.ValidationMessageFor(model => model.StreetAreaName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 mb-4">
+            <div class="form-floating">
+                @Html.EditorFor(model => model.NearestLandmark, new { htmlAttributes = new { @class = "form-control", @placeholder = "NearestLandmark" } })
+                @Html.LabelFor(model => model.NearestLandmark)
+                @Html.ValidationMessageFor(model => model.NearestLandmark, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 mb-4">
+            <div class="form-floating">
+                @Html.DropDownListFor(model => model.ResidingEmirateID, Model.ResidingEmirateItems, "Select Emirate", htmlAttributes: new { @class = "form-select" })
+                @Html.LabelFor(model => model.ResidingEmirateID, "Emirate")
+                @Html.ValidationMessageFor(model => model.ResidingEmirateID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 mb-4">
+            <div class="form-floating">
+                @Html.EditorFor(model => model.EmpMobNo, new { htmlAttributes = new { @class = "form-control", @placeholder = "EmpMobNo" } })
+                @Html.LabelFor(model => model.EmpMobNo)
+                @Html.ValidationMessageFor(model => model.EmpMobNo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 mb-4">
+            <div class="form-floating">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "EmpMobNo" } })
+                @Html.LabelFor(model => model.Email)
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div><h4>Emergency Contact Details</h4></div>
+
+    <div class="row">
+
+        <div class="col-12"><b class="text-muted">Within Residing Country</b></div>
+
+        <div class="col-12 col-md-6 mb-4">
+            <div class="form-floating">
+                @Html.EditorFor(model => model.EmergencyContactName, new { htmlAttributes = new { @class = "form-control", @placeholder = "EmergencyContactName" } })
+                @Html.LabelFor(model => model.EmergencyContactName)
+                @Html.ValidationMessageFor(model => model.EmergencyContactName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 mb-4">
+            <div class="form-floating">
+                @Html.EditorFor(model => model.EmergencyContactNumber, new { htmlAttributes = new { @class = "form-control", @placeholder = "EmergencyContactNumber" } })
+                @Html.LabelFor(model => model.EmergencyContactNumber)
+                @Html.ValidationMessageFor(model => model.EmergencyContactNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-12"><b class="text-muted">At Home Country</b></div>
+
+        <div class="col-12 col-md-6 mb-4">
+            <div class="form-floating">
+                @Html.EditorFor(model => model.EmergencyContactNameHmCtry, new { htmlAttributes = new { @class = "form-control", @placeholder = "EmergencyContactNameHmCtry" } })
+                @Html.LabelFor(model => model.EmergencyContactNameHmCtry)
+                @Html.ValidationMessageFor(model => model.EmergencyContactNameHmCtry, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 mb-4">
+            <div class="form-floating">
+                @Html.EditorFor(model => model.EmergencyContactNumberHmCtry, new { htmlAttributes = new { @class = "form-control", @placeholder = "EmergencyContactNumberHmCtry" } })
+                @Html.LabelFor(model => model.EmergencyContactNumberHmCtry)
+                @Html.ValidationMessageFor(model => model.EmergencyContactNumberHmCtry, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-12 mb-4">
+            <div class="form-floating">
+                @Html.TextAreaFor(model => model.AddressHmCtry, new { @class = "form-control", @placeholder = "AddressHmCtry", @rows = "15" })
+                @Html.LabelFor(model => model.AddressHmCtry)
+                @Html.ValidationMessageFor(model => model.AddressHmCtry, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <!-- Submit Button -->
+
+    <div class="col-12 mb-4">
+        <div class="form-floating">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+    </div>
+
+</div>
+}
+<div class="col-12 mb-4">
+    <div class="form-floating">
+        <a href="@Url.Action("Index", "POEmployees")" class="btn btn-secondary"><span class="me-2"><i class="bi bi-card-list"></i></span><span>Back to List</span></a>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

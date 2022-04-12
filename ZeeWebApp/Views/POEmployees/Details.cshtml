@@ -1,0 +1,504 @@
+﻿@model ZeeWebApp.Models.POEmployee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Employee Details: @Model.Title @Model.FirstName @Model.LastName</h2>
+<hr />
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th scope="col" style="width: 25%">Field</th>
+            <th scope="col" style="width: 75%">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.Title)</th>
+            <td>@Html.DisplayFor(model => model.Title)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.FirstName)</th>
+            <td>@Html.DisplayFor(model => model.FirstName)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.MiddleName)</th>
+            <td>@Html.DisplayFor(model => model.MiddleName)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.LastName)</th>
+            <td>@Html.DisplayFor(model => model.LastName)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.Entity.EntityName)</th>
+            <td>@Html.DisplayFor(model => model.Entity.EntityName)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.Statustbl.StatusVal)</th>
+            <td>@Html.DisplayFor(model => model.Statustbl.StatusVal)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.EmployeeID)</th>
+            <td>@Html.DisplayFor(model => model.EmployeeID)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.Gender)</th>
+            <td>@Html.DisplayFor(model => model.Gender)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.MaritalStatus)</th>
+            <td>@Html.DisplayFor(model => model.MaritalStatus)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.Country.Nationality)</th>
+            <td>@Html.DisplayFor(model => model.Country.Nationality)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.DateOfJoining)</th>
+            <td>@Html.DisplayFor(model => model.DateOfJoining)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.LastWorkingDay)</th>
+            <td>@Html.DisplayFor(model => model.LastWorkingDay)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.Designation)</th>
+            <td>@Html.DisplayFor(model => model.Designation)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.BloodGroup)</th>
+            <td>@Html.DisplayFor(model => model.BloodGroup)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.CompanyTransport)</th>
+            <td>@Html.DisplayFor(model => model.CompanyTransport)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.Education)</th>
+            <td>@Html.DisplayFor(model => model.Education)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.VisaDesignation)</th>
+            <td>@Html.DisplayFor(model => model.VisaDesignation)</td>
+        </tr>
+        <tr class="table-primary">
+            <td colspan="2"> <h5>Passport Details</h5></td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.PassportNo)</th>
+            <td>@Html.DisplayFor(model => model.PassportNo)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.PassportIssueDt)</th>
+            <td>@Html.DisplayFor(model => model.PassportIssueDt)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.PassportExpiryDt)</th>
+            <td>@Html.DisplayFor(model => model.PassportExpiryDt)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.PassportAtchmt)</th>
+            <td>@Html.DisplayFor(model => model.PassportAtchmt)</td>
+        </tr>
+        <tr class="table-primary">
+            <td colspan="2"> <h5>Visa Details</h5></td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.VisaIssueDt)</th>
+            <td>@Html.DisplayFor(model => model.VisaIssueDt)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.VisaExpiryDt)</th>
+            <td>@Html.DisplayFor(model => model.VisaExpiryDt)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.VisaAtchmt)</th>
+            <td>@Html.DisplayFor(model => model.VisaAtchmt)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.UIDNo)</th>
+            <td>@Html.DisplayFor(model => model.UIDNo)</td>
+        </tr>
+        <tr class="table-primary">
+            <td colspan="2"> <h5>Emirates ID Details</h5></td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.EmiratesIdNo)</th>
+            <td>@Html.DisplayFor(model => model.EmiratesIdNo)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.EmiratesIdIssueDt)</th>
+            <td>@Html.DisplayFor(model => model.EmiratesIdIssueDt)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.EmiratesIdExpiryDt)</th>
+            <td>@Html.DisplayFor(model => model.EmiratesIdExpiryDt)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.EmiratesIdAtchmt)</th>
+            <td>@Html.DisplayFor(model => model.EmiratesIdAtchmt)</td>
+        </tr>
+        <tr class="table-primary">
+            <td colspan="2"> <h5>Address Details</h5></td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.HouseFlatVillaNo)</th>
+            <td>@Html.DisplayFor(model => model.HouseFlatVillaNo)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.StreetAreaName)</th>
+            <td>@Html.DisplayFor(model => model.StreetAreaName)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.NearestLandmark)</th>
+            <td>@Html.DisplayFor(model => model.NearestLandmark)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.Emirate.EmirateName)</th>
+            <td>@Html.DisplayFor(model => model.Emirate.EmirateName)</td>
+        </tr>
+        <tr class="table-primary">
+            <td colspan="2"> <h5>Contact Details</h5></td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.EmpMobNo)</th>
+            <td>@Html.DisplayFor(model => model.EmpMobNo)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.EmergencyContactName)</th>
+            <td>@Html.DisplayFor(model => model.EmergencyContactName)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.EmergencyContactNumber)</th>
+            <td>@Html.DisplayFor(model => model.EmergencyContactNumber)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.EmergencyContactNameHmCtry)</th>
+            <td>@Html.DisplayFor(model => model.EmergencyContactNameHmCtry)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.EmergencyContactNumberHmCtry)</th>
+            <td>@Html.DisplayFor(model => model.EmergencyContactNumberHmCtry)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.Email)</th>
+            <td>@Html.DisplayFor(model => model.Email)</td>
+        </tr>
+        <tr>
+            <th scope="row">@Html.DisplayNameFor(model => model.AddressHmCtry)</th>
+            <td>@Html.DisplayFor(model => model.AddressHmCtry)</td>
+        </tr>
+
+    </tbody>
+</table>
+
+@*<p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@
+
+<p>
+    <a href="@Url.Action("Index", "POEmployees")" class="btn btn-light"><span class="me-2"><i class="bi bi-card-list"></i></span><span>Back to list</span></a>
+
+    <a href="@Url.Action("Edit", "POEmployees", new { id = Model.Id })" class="btn btn-primary"><span class="me-2"><i class="bi bi-pencil-square"></i></span><span>Edit Details</span></a>
+
+</p>
+
+
+
+
+
+@*<div>
+
+    <dl class="row">
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.MiddleName)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.MiddleName)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Entity.EntityName)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Entity.EntityName)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Statustbl.StatusVal)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Statustbl.StatusVal)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.EmployeeID)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.EmployeeID)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.MaritalStatus)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.MaritalStatus)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Country.Nationality)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Country.Nationality)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.DateOfJoining)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.DateOfJoining)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.LastWorkingDay)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.LastWorkingDay)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Designation)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Designation)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.BloodGroup)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.BloodGroup)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.CompanyTransport)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.CompanyTransport)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Education)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Education)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.VisaDesignation)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.VisaDesignation)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.PassportNo)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.PassportNo)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.PassportIssueDt)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.PassportIssueDt)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.PassportExpiryDt)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.PassportExpiryDt)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.PassportAtchmt)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.PassportAtchmt)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.VisaNo)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.VisaNo)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.VisaIssueDt)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.VisaIssueDt)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.VisaExpiryDt)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.VisaExpiryDt)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.VisaAtchmt)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.VisaAtchmt)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.UIDNo)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.UIDNo)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.EmiratesIdNo)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.EmiratesIdNo)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.EmiratesIdIssueDt)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.EmiratesIdIssueDt)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.EmiratesIdExpiryDt)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.EmiratesIdExpiryDt)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.EmiratesIdAtchmt)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.EmiratesIdAtchmt)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.HouseFlatVillaNo)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.HouseFlatVillaNo)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.StreetAreaName)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.StreetAreaName)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.NearestLandmark)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.NearestLandmark)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.ResidingEmirateID)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.ResidingEmirateID)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.EmpMobNo)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.EmpMobNo)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.EmergencyContactName)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.EmergencyContactName)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.EmergencyContactNumber)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.EmergencyContactNumber)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.EmergencyContactNameHmCtry)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.EmergencyContactNameHmCtry)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.EmergencyContactNumberHmCtry)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.EmergencyContactNumberHmCtry)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.AddressHmCtry)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.AddressHmCtry)
+        </dd>
+    </dl>
+</div>*@

@@ -1,0 +1,665 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MVC5DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="RoleMaster">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblCountry">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CountryName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nationality" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblDepartment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblEmirate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmirateName" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="tblEmployees">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gender" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="City" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="DepartmentID" Type="int" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblEntity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EntityName" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="tblPOEmployees">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EntityID" Type="int" />
+          <Property Name="StatusID" Type="int" />
+          <Property Name="EmployeeID" Type="varchar" MaxLength="50" />
+          <Property Name="Title" Type="varchar" MaxLength="10" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="Gender" Type="varchar" MaxLength="10" />
+          <Property Name="MaritalStatus" Type="varchar" MaxLength="15" />
+          <Property Name="NationalityID" Type="int" />
+          <Property Name="DateOfJoining" Type="date" />
+          <Property Name="LastWorkingDay" Type="date" />
+          <Property Name="Designation" Type="varchar" MaxLength="50" />
+          <Property Name="BloodGroup" Type="varchar" MaxLength="50" />
+          <Property Name="CompanyTransport" Type="varchar" MaxLength="50" />
+          <Property Name="Education" Type="varchar" MaxLength="50" />
+          <Property Name="VisaDesignation" Type="varchar" MaxLength="50" />
+          <Property Name="PassportNo" Type="varchar" MaxLength="50" />
+          <Property Name="PassportIssueDt" Type="date" />
+          <Property Name="PassportExpiryDt" Type="date" />
+          <Property Name="PassportAtchmt" Type="varchar" MaxLength="50" />
+          <Property Name="VisaNo" Type="varchar" MaxLength="50" />
+          <Property Name="VisaIssueDt" Type="date" />
+          <Property Name="VisaExpiryDt" Type="date" />
+          <Property Name="VisaAtchmt" Type="varchar" MaxLength="50" />
+          <Property Name="UIDNo" Type="varchar" MaxLength="50" />
+          <Property Name="EmiratesIdNo" Type="varchar" MaxLength="50" />
+          <Property Name="EmiratesIdIssueDt" Type="date" />
+          <Property Name="EmiratesIdExpiryDt" Type="date" />
+          <Property Name="EmiratesIdAtchmt" Type="varchar" MaxLength="50" />
+          <Property Name="HouseFlatVillaNo" Type="varchar" MaxLength="50" />
+          <Property Name="StreetAreaName" Type="varchar" MaxLength="50" />
+          <Property Name="NearestLandmark" Type="varchar" MaxLength="50" />
+          <Property Name="ResidingEmirateID" Type="int" />
+          <Property Name="EmpMobNo" Type="varchar" MaxLength="50" />
+          <Property Name="EmergencyContactName" Type="varchar" MaxLength="50" />
+          <Property Name="EmergencyContactNumber" Type="varchar" MaxLength="50" />
+          <Property Name="EmergencyContactNameHmCtry" Type="varchar" MaxLength="50" />
+          <Property Name="EmergencyContactNumberHmCtry" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="AddressHmCtry" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblStatus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StatusVal" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="tblUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="pwd" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserRolesMapping">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="RoleID" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__tblEmploy__Depar__29572725">
+          <End Role="tblDepartment" Type="Self.tblDepartment" Multiplicity="1" />
+          <End Role="tblEmployees" Type="Self.tblEmployees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDepartment">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblEmployees">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserRoles__RoleI__5441852A">
+          <End Role="RoleMaster" Type="Self.RoleMaster" Multiplicity="1" />
+          <End Role="UserRolesMapping" Type="Self.UserRolesMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RoleMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserRolesMapping">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserRoles__UserI__5535A963">
+          <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+          <End Role="UserRolesMapping" Type="Self.UserRolesMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserRolesMapping">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntityID">
+          <End Role="tblEntity" Type="Self.tblEntity" Multiplicity="0..1" />
+          <End Role="tblPOEmployees" Type="Self.tblPOEmployees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblEntity">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblPOEmployees">
+              <PropertyRef Name="EntityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NationalityID">
+          <End Role="tblCountry" Type="Self.tblCountry" Multiplicity="0..1" />
+          <End Role="tblPOEmployees" Type="Self.tblPOEmployees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCountry">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblPOEmployees">
+              <PropertyRef Name="NationalityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResidingEmirateID">
+          <End Role="tblEmirate" Type="Self.tblEmirate" Multiplicity="0..1" />
+          <End Role="tblPOEmployees" Type="Self.tblPOEmployees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblEmirate">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblPOEmployees">
+              <PropertyRef Name="ResidingEmirateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StatusID">
+          <End Role="tblStatus" Type="Self.tblStatus" Multiplicity="0..1" />
+          <End Role="tblPOEmployees" Type="Self.tblPOEmployees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblStatus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblPOEmployees">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MVC5DBModelStoreContainer">
+          <EntitySet Name="RoleMaster" EntityType="Self.RoleMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCountry" EntityType="Self.tblCountry" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDepartment" EntityType="Self.tblDepartment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblEmirate" EntityType="Self.tblEmirate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblEmployees" EntityType="Self.tblEmployees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblEntity" EntityType="Self.tblEntity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblPOEmployees" EntityType="Self.tblPOEmployees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblStatus" EntityType="Self.tblStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblUsers" EntityType="Self.tblUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserRolesMapping" EntityType="Self.UserRolesMapping" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__tblEmploy__Depar__29572725" Association="Self.FK__tblEmploy__Depar__29572725">
+            <End Role="tblDepartment" EntitySet="tblDepartment" />
+            <End Role="tblEmployees" EntitySet="tblEmployees" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserRoles__RoleI__5441852A" Association="Self.FK__UserRoles__RoleI__5441852A">
+            <End Role="RoleMaster" EntitySet="RoleMaster" />
+            <End Role="UserRolesMapping" EntitySet="UserRolesMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserRoles__UserI__5535A963" Association="Self.FK__UserRoles__UserI__5535A963">
+            <End Role="tblUsers" EntitySet="tblUsers" />
+            <End Role="UserRolesMapping" EntitySet="UserRolesMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntityID" Association="Self.FK_EntityID">
+            <End Role="tblEntity" EntitySet="tblEntity" />
+            <End Role="tblPOEmployees" EntitySet="tblPOEmployees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NationalityID" Association="Self.FK_NationalityID">
+            <End Role="tblCountry" EntitySet="tblCountry" />
+            <End Role="tblPOEmployees" EntitySet="tblPOEmployees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResidingEmirateID" Association="Self.FK_ResidingEmirateID">
+            <End Role="tblEmirate" EntitySet="tblEmirate" />
+            <End Role="tblPOEmployees" EntitySet="tblPOEmployees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StatusID" Association="Self.FK_StatusID">
+            <End Role="tblStatus" EntitySet="tblStatus" />
+            <End Role="tblPOEmployees" EntitySet="tblPOEmployees" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MVC5DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="RoleMaster">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="UserRolesMappings" Relationship="Self.FK__UserRoles__RoleI__5441852A" FromRole="RoleMaster" ToRole="UserRolesMapping" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CountryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="POEmployees" Relationship="Self.FK_NationalityID" FromRole="tblCountry" ToRole="tblPOEmployees" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK__tblEmploy__Depar__29572725" FromRole="tblDepartment" ToRole="tblEmployees" />
+        </EntityType>
+        <EntityType Name="Emirate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmirateName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="POEmployees" Relationship="Self.FK_ResidingEmirateID" FromRole="tblEmirate" ToRole="tblPOEmployees" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="DepartmentID" Type="Int32" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Department" Relationship="Self.FK__tblEmploy__Depar__29572725" FromRole="tblEmployees" ToRole="tblDepartment" />
+        </EntityType>
+        <EntityType Name="Entity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EntityName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="POEmployees" Relationship="Self.FK_EntityID" FromRole="tblEntity" ToRole="tblPOEmployees" />
+        </EntityType>
+        <EntityType Name="POEmployee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EntityID" Type="Int32" />
+          <Property Name="StatusID" Type="Int32" />
+          <Property Name="EmployeeID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MaritalStatus" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="NationalityID" Type="Int32" />
+          <Property Name="DateOfJoining" Type="DateTime" Precision="0" />
+          <Property Name="LastWorkingDay" Type="DateTime" Precision="0" />
+          <Property Name="Designation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BloodGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyTransport" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Education" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VisaDesignation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PassportNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PassportIssueDt" Type="DateTime" Precision="0" />
+          <Property Name="PassportExpiryDt" Type="DateTime" Precision="0" />
+          <Property Name="PassportAtchmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VisaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VisaIssueDt" Type="DateTime" Precision="0" />
+          <Property Name="VisaExpiryDt" Type="DateTime" Precision="0" />
+          <Property Name="VisaAtchmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UIDNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmiratesIdNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmiratesIdIssueDt" Type="DateTime" Precision="0" />
+          <Property Name="EmiratesIdExpiryDt" Type="DateTime" Precision="0" />
+          <Property Name="EmiratesIdAtchmt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HouseFlatVillaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StreetAreaName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NearestLandmark" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ResidingEmirateID" Type="Int32" />
+          <Property Name="EmpMobNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmergencyContactName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmergencyContactNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmergencyContactNameHmCtry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmergencyContactNumberHmCtry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AddressHmCtry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Country" Relationship="Self.FK_NationalityID" FromRole="tblPOEmployees" ToRole="tblCountry" />
+          <NavigationProperty Name="Emirate" Relationship="Self.FK_ResidingEmirateID" FromRole="tblPOEmployees" ToRole="tblEmirate" />
+          <NavigationProperty Name="Entity" Relationship="Self.FK_EntityID" FromRole="tblPOEmployees" ToRole="tblEntity" />
+          <NavigationProperty Name="Statustbl" Relationship="Self.FK_StatusID" FromRole="tblPOEmployees" ToRole="tblStatus" />
+        </EntityType>
+        <EntityType Name="Statustbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StatusVal" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="POEmployees" Relationship="Self.FK_StatusID" FromRole="tblStatus" ToRole="tblPOEmployees" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="UserRolesMappings" Relationship="Self.FK__UserRoles__UserI__5535A963" FromRole="tblUsers" ToRole="UserRolesMapping" />
+        </EntityType>
+        <EntityType Name="UserRolesMapping">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="RoleID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="RoleMaster" Relationship="Self.FK__UserRoles__RoleI__5441852A" FromRole="UserRolesMapping" ToRole="RoleMaster" />
+          <NavigationProperty Name="User" Relationship="Self.FK__UserRoles__UserI__5535A963" FromRole="UserRolesMapping" ToRole="tblUsers" />
+        </EntityType>
+        <Association Name="FK__UserRoles__RoleI__5441852A">
+          <End Role="RoleMaster" Type="Self.RoleMaster" Multiplicity="1" />
+          <End Role="UserRolesMapping" Type="Self.UserRolesMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RoleMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserRolesMapping">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NationalityID">
+          <End Role="tblCountry" Type="MVC5DBModel.Country" Multiplicity="0..1" />
+          <End Role="tblPOEmployees" Type="MVC5DBModel.POEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCountry">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblPOEmployees">
+              <PropertyRef Name="NationalityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblEmploy__Depar__29572725">
+          <End Role="tblDepartment" Type="MVC5DBModel.Department" Multiplicity="1" />
+          <End Role="tblEmployees" Type="MVC5DBModel.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDepartment">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblEmployees">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResidingEmirateID">
+          <End Role="tblEmirate" Type="MVC5DBModel.Emirate" Multiplicity="0..1" />
+          <End Role="tblPOEmployees" Type="MVC5DBModel.POEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblEmirate">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblPOEmployees">
+              <PropertyRef Name="ResidingEmirateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntityID">
+          <End Role="tblEntity" Type="MVC5DBModel.Entity" Multiplicity="0..1" />
+          <End Role="tblPOEmployees" Type="MVC5DBModel.POEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblEntity">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblPOEmployees">
+              <PropertyRef Name="EntityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StatusID">
+          <End Role="tblStatus" Type="MVC5DBModel.Statustbl" Multiplicity="0..1" />
+          <End Role="tblPOEmployees" Type="MVC5DBModel.POEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblStatus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblPOEmployees">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserRoles__UserI__5535A963">
+          <End Role="tblUsers" Type="MVC5DBModel.User" Multiplicity="1" />
+          <End Role="UserRolesMapping" Type="Self.UserRolesMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserRolesMapping">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MVC5DBContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="RoleMasters" EntityType="Self.RoleMaster" />
+          <EntitySet Name="Countries" EntityType="MVC5DBModel.Country" />
+          <EntitySet Name="Departments" EntityType="MVC5DBModel.Department" />
+          <EntitySet Name="Emirates" EntityType="MVC5DBModel.Emirate" />
+          <EntitySet Name="Employees" EntityType="MVC5DBModel.Employee" />
+          <EntitySet Name="Entities" EntityType="MVC5DBModel.Entity" />
+          <EntitySet Name="POEmployees" EntityType="MVC5DBModel.POEmployee" />
+          <EntitySet Name="Statustbls" EntityType="MVC5DBModel.Statustbl" />
+          <EntitySet Name="Users" EntityType="MVC5DBModel.User" />
+          <EntitySet Name="UserRolesMappings" EntityType="Self.UserRolesMapping" />
+          <AssociationSet Name="FK__UserRoles__RoleI__5441852A" Association="Self.FK__UserRoles__RoleI__5441852A">
+            <End Role="RoleMaster" EntitySet="RoleMasters" />
+            <End Role="UserRolesMapping" EntitySet="UserRolesMappings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NationalityID" Association="Self.FK_NationalityID">
+            <End Role="tblCountry" EntitySet="Countries" />
+            <End Role="tblPOEmployees" EntitySet="POEmployees" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblEmploy__Depar__29572725" Association="Self.FK__tblEmploy__Depar__29572725">
+            <End Role="tblDepartment" EntitySet="Departments" />
+            <End Role="tblEmployees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResidingEmirateID" Association="Self.FK_ResidingEmirateID">
+            <End Role="tblEmirate" EntitySet="Emirates" />
+            <End Role="tblPOEmployees" EntitySet="POEmployees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntityID" Association="Self.FK_EntityID">
+            <End Role="tblEntity" EntitySet="Entities" />
+            <End Role="tblPOEmployees" EntitySet="POEmployees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StatusID" Association="Self.FK_StatusID">
+            <End Role="tblStatus" EntitySet="Statustbls" />
+            <End Role="tblPOEmployees" EntitySet="POEmployees" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserRoles__UserI__5535A963" Association="Self.FK__UserRoles__UserI__5535A963">
+            <End Role="tblUsers" EntitySet="Users" />
+            <End Role="UserRolesMapping" EntitySet="UserRolesMappings" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MVC5DBModelStoreContainer" CdmEntityContainer="MVC5DBContext">
+          <EntitySetMapping Name="RoleMasters">
+            <EntityTypeMapping TypeName="MVC5DBModel.RoleMaster">
+              <MappingFragment StoreEntitySet="RoleMaster">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="MVC5DBModel.Country">
+              <MappingFragment StoreEntitySet="tblCountry">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="MVC5DBModel.Department">
+              <MappingFragment StoreEntitySet="tblDepartment">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Emirates">
+            <EntityTypeMapping TypeName="MVC5DBModel.Emirate">
+              <MappingFragment StoreEntitySet="tblEmirate">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EmirateName" ColumnName="EmirateName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="MVC5DBModel.Employee">
+              <MappingFragment StoreEntitySet="tblEmployees">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Entities">
+            <EntityTypeMapping TypeName="MVC5DBModel.Entity">
+              <MappingFragment StoreEntitySet="tblEntity">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EntityName" ColumnName="EntityName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="POEmployees">
+            <EntityTypeMapping TypeName="MVC5DBModel.POEmployee">
+              <MappingFragment StoreEntitySet="tblPOEmployees">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EntityID" ColumnName="EntityID" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+                <ScalarProperty Name="NationalityID" ColumnName="NationalityID" />
+                <ScalarProperty Name="DateOfJoining" ColumnName="DateOfJoining" />
+                <ScalarProperty Name="LastWorkingDay" ColumnName="LastWorkingDay" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="BloodGroup" ColumnName="BloodGroup" />
+                <ScalarProperty Name="CompanyTransport" ColumnName="CompanyTransport" />
+                <ScalarProperty Name="Education" ColumnName="Education" />
+                <ScalarProperty Name="VisaDesignation" ColumnName="VisaDesignation" />
+                <ScalarProperty Name="PassportNo" ColumnName="PassportNo" />
+                <ScalarProperty Name="PassportIssueDt" ColumnName="PassportIssueDt" />
+                <ScalarProperty Name="PassportExpiryDt" ColumnName="PassportExpiryDt" />
+                <ScalarProperty Name="PassportAtchmt" ColumnName="PassportAtchmt" />
+                <ScalarProperty Name="VisaNo" ColumnName="VisaNo" />
+                <ScalarProperty Name="VisaIssueDt" ColumnName="VisaIssueDt" />
+                <ScalarProperty Name="VisaExpiryDt" ColumnName="VisaExpiryDt" />
+                <ScalarProperty Name="VisaAtchmt" ColumnName="VisaAtchmt" />
+                <ScalarProperty Name="UIDNo" ColumnName="UIDNo" />
+                <ScalarProperty Name="EmiratesIdNo" ColumnName="EmiratesIdNo" />
+                <ScalarProperty Name="EmiratesIdIssueDt" ColumnName="EmiratesIdIssueDt" />
+                <ScalarProperty Name="EmiratesIdExpiryDt" ColumnName="EmiratesIdExpiryDt" />
+                <ScalarProperty Name="EmiratesIdAtchmt" ColumnName="EmiratesIdAtchmt" />
+                <ScalarProperty Name="HouseFlatVillaNo" ColumnName="HouseFlatVillaNo" />
+                <ScalarProperty Name="StreetAreaName" ColumnName="StreetAreaName" />
+                <ScalarProperty Name="NearestLandmark" ColumnName="NearestLandmark" />
+                <ScalarProperty Name="ResidingEmirateID" ColumnName="ResidingEmirateID" />
+                <ScalarProperty Name="EmpMobNo" ColumnName="EmpMobNo" />
+                <ScalarProperty Name="EmergencyContactName" ColumnName="EmergencyContactName" />
+                <ScalarProperty Name="EmergencyContactNumber" ColumnName="EmergencyContactNumber" />
+                <ScalarProperty Name="EmergencyContactNameHmCtry" ColumnName="EmergencyContactNameHmCtry" />
+                <ScalarProperty Name="EmergencyContactNumberHmCtry" ColumnName="EmergencyContactNumberHmCtry" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="AddressHmCtry" ColumnName="AddressHmCtry" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Statustbls">
+            <EntityTypeMapping TypeName="MVC5DBModel.Statustbl">
+              <MappingFragment StoreEntitySet="tblStatus">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="StatusVal" ColumnName="StatusVal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="MVC5DBModel.User">
+              <MappingFragment StoreEntitySet="tblUsers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="pwd" ColumnName="pwd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRolesMappings">
+            <EntityTypeMapping TypeName="MVC5DBModel.UserRolesMapping">
+              <MappingFragment StoreEntitySet="UserRolesMapping">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
